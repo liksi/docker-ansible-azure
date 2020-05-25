@@ -1,10 +1,10 @@
 ARG AZURE_CLI_VERSION=2.0.81
-ARG ANSIBLE_VERSION=2.8.5
+ARG ANSIBLE_VERSION=2.9.9
 
 FROM liksi/ansible:${ANSIBLE_VERSION}-ubuntu18.04
 ARG AZURE_CLI_VERSION
 ARG ANSIBLE_VERSION
-LABEL "maintainer"="liksi <info@liksi.fr>"
+LABEL "maintainer"="liksi <ops@liksi.fr>"
 
 RUN pip install --upgrade pip && pip install ansible[azure]==${ANSIBLE_VERSION} && pip install azure-cli==${AZURE_CLI_VERSION}
 
